@@ -42,7 +42,7 @@ int mandelbrot(complex c){
 	int i =0;
 	while(i < 255){
 		z = cSum(cSquare(z), c);
-		if(z.real > FLT_MAX || z.imag > FLT_MAX){
+		if(cMod(z) >= 2){
 			return i;
 		}
 		i++;
