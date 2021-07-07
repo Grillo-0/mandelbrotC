@@ -1,7 +1,7 @@
 all: mandelbrot
 
 mandelbrot: mandelbrot.o complex.o ppm.o
-	gcc ppm.o complex.o mandelbrot.o -o mandelbrot
+	gcc ppm.o complex.o mandelbrot.o -o mandelbrot -lm
 
 mandelbrot.o: mandelbrot.c
 	gcc -c mandelbrot.c -o mandelbrot.o
