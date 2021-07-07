@@ -22,11 +22,10 @@ int main(int argc, char *argv[]){
 			complex c;
 			c.real = map(j,0,width-1,-2,1);
 			c.imag = map(i,0,height-1,-1,1);
-			printf("%d %d\n",i,j);
+			printf("created %d lines\r",i);
 			values[i][j] = mandelbrot(c);
 		}
 	}
-	printf("teriminado\n");
 	writeP2("mandelbrot.ppm",width,height,255, values);
 }
 
