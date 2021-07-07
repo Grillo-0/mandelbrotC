@@ -14,19 +14,20 @@ int main(int argc, char *argv[]){
 	}
 	int width = atoi(argv[1]);
 	int height = atoi(argv[2]);
-	int **values = malloc(sizeof(int *) * height);
+
+	image *img = initImage("mandelbrot.ppm",width,height,"w");
 
 	for(int i=0; i<height; i++){
-		values[i] = malloc(sizeof(int) * width);
 		for(int j=0; j<width; j++){
 			complex c;
 			c.real = map(j,0,width-1,-2,1);
 			c.imag = map(i,0,height-1,-1,1);
 			printf("created %d lines\r",i);
-			values[i][j] = mandelbrot(c);
+			int rgb[] = {mandelbrot(c),mandelbrot(c),mandelbrot(c)};
+			writeNextPixel(img, rgb);
 		}
 	}
-	writeP2("mandelbrot.ppm",width,height,255, values);
+	closeImage(img);
 }
 
 double map(double input, double input_start, double input_end, double output_start, double output_end){
