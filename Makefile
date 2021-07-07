@@ -16,4 +16,4 @@ run: mandelbrot
 	./mandelbrot
 
 clean:
-	rm *.o
+	rm *.o mandelbrot
