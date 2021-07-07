@@ -40,11 +40,11 @@ int mandelbrot(complex c){
 	z.imag = 0.0;
 
 	int i =0;
-	while(i < 255){
-		z = cSum(cSquare(z), c);
+	while(i <= 255){
 		if(cMod(z) >= 2){
 			return i;
 		}
+		z = cSum(cSquare(z), c);
 		i++;
 	}
 	return 0;
