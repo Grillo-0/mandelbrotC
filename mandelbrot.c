@@ -17,13 +17,21 @@ int main(int argc, char *argv[]){
 
 	image *img = initImage("mandelbrot.ppm",width,height,"w");
 
+	int N = 256;
+	int N3 = N * N * N;
+
 	for(int i=0; i<height; i++){
 		for(int j=0; j<width; j++){
 			complex c;
 			c.real = map(j,0,width-1,-2,1);
 			c.imag = map(i,0,height-1,-1,1);
 			printf("created %d lines\r",i);
-			int rgb[] = {mandelbrot(c),mandelbrot(c),mandelbrot(c)};
+			int n = mandelbrot(c);
+			double t = (double)n/(double)255;
+			int rgb[3];
+			rgb[0] = (int)(9*(1-t)*t*t*t*255);
+			rgb[1] = (int)(15*(1-t)*(1-t)*t*t*255);
+			rgb[2] = (int)(8.5*(1-t)*(1-t)*(1-t)*t*255);
 			writeNextPixel(img, rgb);
 		}
 	}
