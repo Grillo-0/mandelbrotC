@@ -2,6 +2,7 @@
 #define __PPM__
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct{
 	FILE *fd;

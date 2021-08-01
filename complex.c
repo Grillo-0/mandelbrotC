@@ -1,5 +1,4 @@
 #include "complex.h"
-#include <math.h>
 
 complex cSquare(complex z){
 	complex r;
