@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>
-#include "../complex/complex.h"
-#include "../ppm/ppm.h"
+#include "complex.h"
+#include "ppm.h"
 
 int mandelbrot(complex c);
 double map(double input, double input_start, double input_end, double output_start, double output_end);

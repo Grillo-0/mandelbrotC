@@ -6,11 +6,11 @@ mandelbrot: mandelbrot.o complex.o ppm.o
 mandelbrot.o: mandelbrot.c
 	gcc -c mandelbrot.c -o mandelbrot.o
 
-complex.o: ../complex/complex.c
-	gcc -c ../complex/complex.c -o complex.o
+complex.o: complex.c
+	gcc -c complex.c -o complex.o
 
-ppm.o: ../ppm/ppm.c
-	gcc -c ../ppm/ppm.c -o ppm.o
+ppm.o: ppm.c
+	gcc -c ppm.c -o ppm.o
 
 run: mandelbrot
 	./mandelbrot
